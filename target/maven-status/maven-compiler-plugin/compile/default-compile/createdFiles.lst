@@ -1,0 +1,9 @@
+cz/vellus/crmapp3/model/Person.class
+cz/vellus/crmapp3/CRMapp.class
+cz/vellus/crmapp3/controller/MessagesController.class
+cz/vellus/crmapp3/util/SceneSwitcher.class
+cz/vellus/crmapp3/data/HibernateUtils.class
+cz/vellus/crmapp3/controller/ClientFormController.class
+cz/vellus/crmapp3/controller/RootController.class
+module-info.class
+cz/vellus/crmapp3/controller/DashboardController.class
