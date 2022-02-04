@@ -24,5 +24,10 @@ public class PersonData {
         return hiberTools.showData();
     }
 
+    public static SessionFactory prepareFactory() {
+        factory = factory == null ? hiberTools.setUpFactory() : factory;
+        return factory;
+    }
+
 
 }

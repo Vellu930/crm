@@ -1,5 +1,6 @@
 package cz.vellus.crmapp3.controller;
 
+import cz.vellus.crmapp3.data.PersonData;
 import cz.vellus.crmapp3.util.SceneSwitcher;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,6 +17,8 @@ public class RootController {
 
     @FXML
     public void initialize() {
+        switchToDashboard();
+        PersonData.prepareFactory();
     }
 
     @FXML

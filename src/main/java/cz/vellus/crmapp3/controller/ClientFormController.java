@@ -1,9 +1,7 @@
 package cz.vellus.crmapp3.controller;
 
-import cz.vellus.crmapp3.data.HibernateUtils;
 import cz.vellus.crmapp3.data.PersonData;
 import cz.vellus.crmapp3.model.Person;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -16,22 +14,39 @@ import java.util.ResourceBundle;
 
 public class ClientFormController extends VBox {
 
-    @FXML private TextField CityTextfield;
+    @FXML private TextField nameTextfield;
+    @FXML private TextField cityTextfield;
     @FXML private TextField countryTextfield;
     @FXML private TextField emailTextfield;
-    @FXML private TextField nameTextfield;
     @FXML private TextField phoneTextfield;
     @FXML private Button saveNewBut;
-
 
     @FXML private URL location;
     @FXML private ResourceBundle resources;
 
     public void initialize() {
         saveNewBut.setOnAction((event) -> {
-            PersonData.addPerson(new Person("Jake Gylenhal", "city", "country", "mailer@com", "9089756"));
-
+            Person client = readPersonFromFrom();
+            PersonData.addPerson(client);
+            clearForm();
         });
+    }
+
+    private void clearForm() {
+        nameTextfield.setText("");
+        cityTextfield.setText("");
+        countryTextfield.setText("");
+        emailTextfield.setText("");
+        phoneTextfield.setText("");
+    }
+
+    private Person readPersonFromFrom() {
+        String name = nameTextfield.getText();
+        String city = cityTextfield.getText();
+        String country = countryTextfield.getText();
+        String mail = emailTextfield.getText();
+        String phone = phoneTextfield.getText();
+        return new Person(name, city, country, mail, phone);
     }
 
     public ClientFormController() {
