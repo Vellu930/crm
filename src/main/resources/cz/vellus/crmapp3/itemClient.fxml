@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.net.URL?>
+<HBox fx:id="hbox" opacity="0.77" prefHeight="57.0" prefWidth="433.0" style="-fx-background-color: #feffdf; -fx-background-radius: 5;"
+      xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.vellus.crmapp3.controller.ItemController">
+   <stylesheets>
+      <URL value="@Style/coolStyles.css" />
+   </stylesheets>
+   <children>
+      <VBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="174.0">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" text="Carl Vogennahcht">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="sinceLabel" alignment="CENTER" contentDisplay="CENTER" text="Client since: " />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="57.0" prefWidth="170.0">
+         <padding>
+            <Insets left="5.0" right="3.0" />
+         </padding>
+         <children>
+            <Label fx:id="cityLabel" prefHeight="16.0" prefWidth="174.0" text="City: ">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="mailLabel" prefHeight="16.0" prefWidth="183.0" text="mail">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneLabel" prefHeight="16.0" prefWidth="219.0" text="123436">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="57.0" prefWidth="110.0">
+         <padding>
+            <Insets left="3.0" right="3.0" />
+         </padding>
+         <children>
+            <Label prefHeight="16.0" prefWidth="114.0" text="Messages: 0" />
+            <Label prefHeight="16.0" prefWidth="117.0" text="Events: " />
+            <Label prefHeight="16.0" prefWidth="117.0" text="Payments:" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

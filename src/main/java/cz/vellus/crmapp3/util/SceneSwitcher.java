@@ -3,6 +3,7 @@ package cz.vellus.crmapp3.util;
 import cz.vellus.crmapp3.controller.ClientFormController;
 import cz.vellus.crmapp3.controller.DashboardController;
 import cz.vellus.crmapp3.controller.MessagesController;
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
 public class SceneSwitcher {

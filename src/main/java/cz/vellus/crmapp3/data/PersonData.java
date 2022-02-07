@@ -4,6 +4,7 @@ import cz.vellus.crmapp3.model.Person;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PersonData {
     private final static HibernateUtils hiberTools = new HibernateUtils();
@@ -14,9 +15,9 @@ public class PersonData {
         hiberTools.addData(person);
     }
 
-    public static Person findPerson(String name) {
+    public static Optional<Person> findPerson(String name) {
         factory = factory == null ? hiberTools.setUpFactory() : factory;
-        return hiberTools.findPersonByName(name);
+        return Optional.ofNullable(hiberTools.findPersonByName(name));
     }
 
     public static List<Person> getPersonList() {
@@ -27,6 +28,9 @@ public class PersonData {
     public static SessionFactory prepareFactory() {
         factory = factory == null ? hiberTools.setUpFactory() : factory;
         return factory;
+    }
+    public static void destroyFactory() {
+        if(factory != null) factory.close();
     }
 
 
