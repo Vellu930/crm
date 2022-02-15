@@ -38,4 +38,10 @@ public class RootController {
         SceneSwitcher.getMessages(contentBox);
     }
 
+    @FXML
+    void switchToClientsTable() {
+        System.out.println("Switching to Table...");
+        SceneSwitcher.getClientTable(contentBox);
+    }
+
 }

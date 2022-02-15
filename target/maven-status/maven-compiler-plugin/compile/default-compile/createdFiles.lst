@@ -6,5 +6,6 @@ cz/vellus/crmapp3/util/SceneSwitcher.class
 cz/vellus/crmapp3/data/HibernateUtils.class
 cz/vellus/crmapp3/controller/ClientFormController.class
 cz/vellus/crmapp3/controller/RootController.class
+cz/vellus/crmapp3/controller/ClientTableController.class
 module-info.class
 cz/vellus/crmapp3/controller/DashboardController.class

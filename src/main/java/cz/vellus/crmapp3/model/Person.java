@@ -13,10 +13,12 @@ public class Person {
     private String name;
     @Column
     private String city;
-    @Column private String country;
-    @Column private String email;
-    @Column private String phone;
-
+    @Column
+    private String country;
+    @Column
+    private String email;
+    @Column
+    private String phone;
 
     public Person() {
     }
@@ -33,6 +35,7 @@ public class Person {
         this.setName(name);
     }
 
+    // ------- GETTERS ---------- //
     public Integer getId() {
         return id;
     }
@@ -41,36 +44,39 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCity() {
         return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getPhone() {return phone; }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getPhone() {
-        return phone;
+    // ------- SETTERS ---------- //
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setPhone(String phone) {

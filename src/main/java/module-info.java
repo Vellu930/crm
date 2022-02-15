@@ -2,10 +2,6 @@ module cz.vellus.crmapp3 {
     requires javafx.controls;
     requires javafx.fxml;
 
-    requires org.controlsfx.controls;
-    requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.bootstrapfx.core;
-
     requires java.persistence;
     requires org.hibernate.orm.core;
     requires java.naming;
@@ -15,6 +11,6 @@ module cz.vellus.crmapp3 {
     exports cz.vellus.crmapp3.controller;
     exports cz.vellus.crmapp3;
     opens cz.vellus.crmapp3.controller to javafx.fxml;
-    opens cz.vellus.crmapp3.model to org.hibernate.orm.core;
+    opens cz.vellus.crmapp3.model to org.hibernate.orm.core, javafx.base;
 
 }
