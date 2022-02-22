@@ -1,7 +1,7 @@
 package cz.vellus.crmapp3.controller;
 
 import cz.vellus.crmapp3.data.PersonData;
-import cz.vellus.crmapp3.model.Person;
+import cz.vellus.crmapp3.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -26,7 +26,7 @@ public class ClientFormController extends VBox {
 
     public void initialize() {
         saveNewBut.setOnAction((event) -> {
-            Person client = readPersonFromFrom();
+            Client client = readPersonFromFrom();
             PersonData.addPerson(client);
             clearForm();
         });
@@ -40,13 +40,13 @@ public class ClientFormController extends VBox {
         phoneTextfield.setText("");
     }
 
-    private Person readPersonFromFrom() {
+    private Client readPersonFromFrom() {
         String name = nameTextfield.getText();
         String city = cityTextfield.getText();
         String country = countryTextfield.getText();
         String mail = emailTextfield.getText();
         String phone = phoneTextfield.getText();
-        return new Person(name, city, country, mail, phone);
+        return new Client(name, city, country, mail, phone);
     }
 
     public ClientFormController() {

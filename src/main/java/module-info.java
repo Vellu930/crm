@@ -6,6 +6,7 @@ module cz.vellus.crmapp3 {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires java.sql;
+    requires java.mail;
 
     opens cz.vellus.crmapp3 to javafx.fxml;
     exports cz.vellus.crmapp3.controller;

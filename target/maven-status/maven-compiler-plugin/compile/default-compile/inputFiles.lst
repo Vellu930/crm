@@ -1,13 +1,12 @@
-/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/PersonProperty.java
-/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/data/PersonData.java
-/home/vellu/IdeaProjects/CRMapp3/src/main/java/module-info.java
-/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/Person.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/ItemController.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/MessagesController.java
+/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/data/PersonData.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/ClientFormController.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/data/HibernateUtils.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/DashboardController.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/CRMapp.java
+/home/vellu/IdeaProjects/CRMapp3/src/main/java/module-info.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/util/SceneSwitcher.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/RootController.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/ClientTableController.java
+/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/Person.java

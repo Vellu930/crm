@@ -1,13 +1,15 @@
 package cz.vellus.crmapp3.controller;
 
 import cz.vellus.crmapp3.data.PersonData;
-import cz.vellus.crmapp3.model.Person;
+import cz.vellus.crmapp3.model.Client;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,20 +20,16 @@ import java.net.URL;
 
 public class ClientTableController extends VBox {
 
-    @FXML private TextField nameFilter;
-    @FXML private TextField cityFilter;
-    @FXML private TextField countryFilter;
-    @FXML private TextField emailFilter;
-    @FXML private TextField phoneFilter;
-    @FXML private TableView<Person> clientsTable;
-    @FXML private TableColumn<Person, Integer> idColumn;
-    @FXML private TableColumn<Person, String> nameColumn;
-    @FXML private TableColumn<Person, String> cityColumn;
-    @FXML private TableColumn<Person, String> countryColumn;
-    @FXML private TableColumn<Person, String> phoneColumn;
-    @FXML private TableColumn<Person, String> emailColumn;
+    @FXML private TextField filterField;
+    @FXML private TableView<Client> clientsTable;
+    @FXML private TableColumn<Client, Integer> idColumn;
+    @FXML private TableColumn<Client, String> nameColumn;
+    @FXML private TableColumn<Client, String> cityColumn;
+    @FXML private TableColumn<Client, String> countryColumn;
+    @FXML private TableColumn<Client, String> phoneColumn;
+    @FXML private TableColumn<Client, String> emailColumn;
     // @FXML private TableColumn<Person, String> sinceColumn;
-    private ObservableList<Person> clientsObserver;
+    private ObservableList<Client> clientsObserver;
 
     public VBox getRootNode() {
         URL url = ClientTableController.class.getResource("/cz/vellus/crmapp3/clientTable.fxml");
@@ -59,35 +57,9 @@ public class ClientTableController extends VBox {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-        FilteredList<Person> filteredList = new FilteredList<>(clientsObserver, v -> true);
-        filterByName(filteredList);
-        filterByCity(filteredList);
-        filterByCountry(filteredList);
-        filterByEmail(filteredList);
-        filterByPhone(filteredList);
-        clientsTable.setItems(filteredList);
+        FilteredList<Client> filteredList = new FilteredList<>(clientsObserver);
 
-    }
-
-    private void filterByCity(FilteredList<Person> filteredList) {
-        cityFilter.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(p -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String searchedValue = newValue.toLowerCase();
-                if (p.getCity() != null) {
-                    if (p.getCity().toLowerCase().contains(searchedValue)) {
-                    return true;
-                    }
-                }
-                return false;
-            });
-        });
-    }
-
-    private void filterByName(FilteredList<Person> filteredList) {
-        nameFilter.textProperty().addListener((observable, oldValue, newValue) -> {
+        ChangeListener<String> listener = (observable, oldValue, newValue) -> {
             filteredList.setPredicate(p -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -96,61 +68,48 @@ public class ClientTableController extends VBox {
                 if (p.getName().toLowerCase().contains(searchedValue)) {
                     return true;
                 }
-                return false;
-            });
-        });
-    }
-
-    private void filterByCountry(FilteredList<Person> filteredList) {
-        countryFilter.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(p -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
+                if (p.getCity() != null) {
+                    if (p.getCity().toLowerCase().contains(searchedValue)) {
+                        return true;
+                    }
                 }
-                String searchedValue = newValue.toLowerCase();
                 if (p.getCountry() != null) {
+                    System.out.println(p.getCountry());
                     if (p.getCountry().toLowerCase().contains(searchedValue)) {
                         return true;
                     }
                 }
-                return false;
-            });
-        });
-    }
-    private void filterByEmail(FilteredList<Person> filteredList) {
-        emailFilter.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(p -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String searchedValue = newValue.toLowerCase();
                 if (p.getEmail() != null) {
                     if (p.getEmail().toLowerCase().contains(searchedValue)) {
                         return true;
                     }
                 }
-                return false;
-            });
-        });
-    }
-
-    private void filterByPhone(FilteredList<Person> filteredList) {
-        phoneFilter.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(p -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String searchedValue = newValue.toLowerCase();
                 if (p.getPhone() != null) {
+                    System.out.println(p.getPhone());
                     if (p.getPhone().toLowerCase().contains(searchedValue)) {
                         return true;
                     }
                 }
                 return false;
             });
-        });
+        };
+
+        filterField.textProperty().addListener(listener);
+
+        clientsTable.setItems(filteredList);
+
     }
 
+    @FXML
+    void rowEditable() {
+        ObservableList<TablePosition> editableRows = clientsTable.getSelectionModel().getSelectedCells();
+
+    }
+
+    @FXML
+    void removeRow() {
+
+    }
 
 }
 

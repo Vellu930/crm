@@ -1,6 +1,6 @@
 package cz.vellus.crmapp3.data;
 
-import cz.vellus.crmapp3.model.Person;
+import cz.vellus.crmapp3.model.Client;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 class HibernateUtilsTest {
 
     private static HibernateUtils utils = new HibernateUtils();
-    private List<Person> personList = new ArrayList<>();
+    private List<Client> personList = new ArrayList<>();
     private static SessionFactory sessionFactory;
 
     @BeforeAll
@@ -28,11 +28,11 @@ class HibernateUtilsTest {
     @Test
     void addData() {
         System.out.println("---------Adding data TEST 1:---------");
-        personList.add(new Person("Paul Sanders", "London", "UK", "jack@email.com", "43653290"));
-        personList.add(new Person("Gay Pam"));
-        personList.add(new Person("Mary Hulk"));
+        personList.add(new Client("Paul Sanders", "London", "UK", "jack@email.com", "43653290"));
+        personList.add(new Client("Gay Pam"));
+        personList.add(new Client("Mary Hulk"));
         System.out.println("Number of people in local list: "+personList.size());
-        for (Person p: personList) {
+        for (Client p: personList) {
             utils.addData(p);
         }
     }
@@ -54,7 +54,7 @@ class HibernateUtilsTest {
     @Test
     void findPersonById() {
         System.out.println("---------Finding person by ID TEST 5: ---------");
-        Person person123 = new Person("Lucy Spring");
+        Client person123 = new Client("Lucy Spring");
         utils.addData(person123);
         int id = person123.getId();
         int queriedID = utils.findPersonById(id).getId();
@@ -65,7 +65,7 @@ class HibernateUtilsTest {
     void deletePerson() {
         addData();
         System.out.println("---------Deleting data TEST 2: ---------");
-        Person p = utils.findPersonByName("Paul Sanders");
+        Client p = utils.findPersonByName("Paul Sanders");
         utils.deletePerson(p.getName());
         personList.remove(p);
         System.out.println(utils.showData().size());

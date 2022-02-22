@@ -1,11 +1,11 @@
 package cz.vellus.crmapp3.data;
 
-import cz.vellus.crmapp3.model.Person;
+import cz.vellus.crmapp3.model.Client;
 import org.junit.jupiter.api.*;
 
 import java.util.Optional;
 
-public class PersonDataTest {
+public class ClientDataTest {
 
     @BeforeAll
     static void setUp() throws Exception {
@@ -23,9 +23,9 @@ public class PersonDataTest {
 
     @Test
     void testFindPerson() {
-        Person p = new Person("Norman Sailor");
+        Client p = new Client("Norman Sailor");
         PersonData.addPerson(p);
-        Optional<Person> optionalPerson = PersonData.findPerson("Norman Wrong");
-        Assertions.assertEquals("Norman Sailor",optionalPerson.orElseGet(() -> new Person("Default Joe")).getName());
+        Optional<Client> optionalPerson = PersonData.findPerson("Norman Wrong");
+        Assertions.assertEquals("Norman Sailor",optionalPerson.orElseGet(() -> new Client("Default Joe")).getName());
     }
 }

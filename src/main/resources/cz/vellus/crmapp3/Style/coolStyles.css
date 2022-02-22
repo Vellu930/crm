@@ -16,8 +16,8 @@
 }
 /* Selected when NOT focused  */
 .list-cell:filled:selected {
-
 }
+
 .list-cell:filled:hover {
     -fx-background-color: #6bca9f;
     -fx-background-insets: 1 5 1 5;
@@ -47,5 +47,58 @@
 .scroll-bar > .decrement-button > .decrement-arrow {
     -fx-background-color: transparent;
     -fx-color: transparent;
+}
+
+/*------------------ tableview ------------------ */
+
+.table-view {
+    -fx-background-color: #42b883;
+    -fx-background-radius: 5px;
+}
+
+.table-view .column-header,
+.table-view .filler,
+.table-view:constrained-resize .filler {
+    -fx-background-color: #feffdf;
+    -fx-background-radius: 5px;
+    -fx-opacity: 0.76;
+    -fx-border-color: transparent #79CFA8 transparent transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: #feffdf;
+    -fx-opacity: 0.6;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected {
+    -fx-background-color: #6bca9f;
+    -fx-background-insets: 1;
+    -fx-background-radius: 2px;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #f0f0ee;
+    -fx-text-background-color: -fx-text-fill;
+    -fx-background-radius: 2px;
+    -fx-background-insets: 1;
+}
+
+.table-row-cell:filled:selected {
+        -fx-background-color: #6bca9f;
+        -fx-background-insets: 1;
+        -fx-background-radius: 2px;
+        -fx-text-background-color: -fx-text-fill;
+}
+
+.table-view .column-resize-line {
+    -fx-background-color: #79CFA8;
+}
+
+.table-cell {
+    -fx-border-color: transparent #79CFA8 transparent transparent;
 }
 

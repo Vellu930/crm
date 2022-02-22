@@ -13,7 +13,7 @@ list of most active clients, and current events.
 	
 ### Technologies
 Project is created with:
-* Java 11
+* Java 11.0.13
 * JavaFX 11.0.2
 * SceneBuilder 17
 * MySQL 8.0.27
