@@ -1,7 +1,7 @@
 package cz.vellus.crmapp3.controller;
 
 import cz.vellus.crmapp3.data.PersonData;
-import cz.vellus.crmapp3.model.Client;
+import cz.vellus.crmapp3.model.Person;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,15 +21,15 @@ import java.net.URL;
 public class ClientTableController extends VBox {
 
     @FXML private TextField filterField;
-    @FXML private TableView<Client> clientsTable;
-    @FXML private TableColumn<Client, Integer> idColumn;
-    @FXML private TableColumn<Client, String> nameColumn;
-    @FXML private TableColumn<Client, String> cityColumn;
-    @FXML private TableColumn<Client, String> countryColumn;
-    @FXML private TableColumn<Client, String> phoneColumn;
-    @FXML private TableColumn<Client, String> emailColumn;
+    @FXML private TableView<Person> clientsTable;
+    @FXML private TableColumn<Person, Integer> idColumn;
+    @FXML private TableColumn<Person, String> nameColumn;
+    @FXML private TableColumn<Person, String> cityColumn;
+    @FXML private TableColumn<Person, String> countryColumn;
+    @FXML private TableColumn<Person, String> phoneColumn;
+    @FXML private TableColumn<Person, String> emailColumn;
     // @FXML private TableColumn<Person, String> sinceColumn;
-    private ObservableList<Client> clientsObserver;
+    private ObservableList<Person> clientsObserver;
 
     public VBox getRootNode() {
         URL url = ClientTableController.class.getResource("/cz/vellus/crmapp3/clientTable.fxml");
@@ -57,7 +57,7 @@ public class ClientTableController extends VBox {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-        FilteredList<Client> filteredList = new FilteredList<>(clientsObserver);
+        FilteredList<Person> filteredList = new FilteredList<>(clientsObserver);
 
         ChangeListener<String> listener = (observable, oldValue, newValue) -> {
             filteredList.setPredicate(p -> {

@@ -8,12 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
 public class SceneSwitcher {
-    public static final String HOME = "Dashboard.fxml";
-    public static final String MESSAGES = "Messages.fxml";
-    public static final String TASKS = "Tasks.fxml";
-    public static final String EVENTS = "Events.fxml";
-    public static final String CLIENTS = "Clients.fxml";
-    public static final String NEW_CLIENT_FORM = "ClientForm.fxml";
 
     private static DashboardController dashboard;
     private static ClientFormController clientForm;

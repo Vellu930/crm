@@ -1,15 +1,17 @@
 package cz.vellus.crmapp3.model;
 
+import javax.mail.Message;
+
 public class User {
     private String name;
     private String email;
     private String password;
-    private Client[] clients;
+    private Person[] clients;
     private Event[] events;
     private Task[] tasks;
     private Message[] messages;
 
-    public User(String name, String email, String password, Client[] clients, Event[] events, Task[] tasks, Message[] messages) {
+    public User(String name, String email, String password, Person[] clients, Event[] events, Task[] tasks, Message[] messages) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -31,7 +33,7 @@ public class User {
         return password;
     }
 
-    public Client[] getClients() {
+    public Person[] getClients() {
         return clients;
     }
 
@@ -59,7 +61,7 @@ public class User {
         this.password = password;
     }
 
-    public void setClients(Client[] clients) {
+    public void setClients(Person[] clients) {
         this.clients = clients;
     }
 

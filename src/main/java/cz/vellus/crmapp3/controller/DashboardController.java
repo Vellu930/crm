@@ -1,7 +1,7 @@
 package cz.vellus.crmapp3.controller;
 
 import cz.vellus.crmapp3.data.PersonData;
-import cz.vellus.crmapp3.model.Client;
+import cz.vellus.crmapp3.model.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
@@ -34,9 +34,9 @@ public class DashboardController extends VBox {
 
     public void initialize() {
 
-        List<Client> clients = PersonData.getPersonList();
+        List<Person> clients = PersonData.getPersonList();
 
-        for (Client c :clients) {
+        for (Person c :clients) {
             ItemController itemController = null;
             FXMLLoader loader = new FXMLLoader();
             HBox hbox = null;

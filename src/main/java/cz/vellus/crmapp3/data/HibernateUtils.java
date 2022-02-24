@@ -1,6 +1,6 @@
 package cz.vellus.crmapp3.data;
 
-import cz.vellus.crmapp3.model.Client;
+import cz.vellus.crmapp3.model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -43,7 +43,7 @@ public class HibernateUtils {
     }
 
 
-    public void addData(Client p) {
+    public void addData(Person p) {
         try {
             Session session = factory.openSession();
             session.beginTransaction();
@@ -59,12 +59,12 @@ public class HibernateUtils {
     }
 
 
-    public List<Client> showData() {
-        List<Client> result = new ArrayList<>();
+    public List<Person> showData() {
+        List<Person> result = new ArrayList<>();
         try {
             Session session = factory.openSession();
             session.beginTransaction();
-            result = session.createQuery("from Person", Client.class).getResultList();
+            result = session.createQuery("from Person", Person.class).getResultList();
             session.getTransaction().commit();
             session.close();
 //            for ( Person per : (List<Person>) result ) {
@@ -78,13 +78,13 @@ public class HibernateUtils {
         return result;
     }
 
-    public Client findPersonByName(String name) {
-        Client person = null;
+    public Person findPersonByName(String name) {
+        Person person = null;
         String hql = "from Person P where P.name= :p_name";
         try {
             Session session = factory.openSession();
             session.beginTransaction();
-            List<Client> queryList = session.createQuery(hql).setParameter("p_name", name).getResultList();
+            List<Person> queryList = session.createQuery(hql).setParameter("p_name", name).getResultList();
             session.getTransaction().commit();
             session.close();
             if (!queryList.isEmpty()) {
@@ -102,12 +102,12 @@ public class HibernateUtils {
     }
 
     // id is just internal item, not used
-    public Client findPersonById(int id) {
-        Client personFound = null;
+    public Person findPersonById(int id) {
+        Person personFound = null;
         try {
             Session session = factory.openSession();
             session.beginTransaction();
-            personFound = session.find(Client.class, id);
+            personFound = session.find(Person.class, id);
             session.getTransaction().commit();
             session.close();
         }
@@ -123,8 +123,8 @@ public class HibernateUtils {
         try {
             Session session = factory.openSession();
             session.beginTransaction();
-            Client client = findPersonByName(name);
-            session.delete(client);
+            Person person = findPersonByName(name);
+            session.delete(person);
             session.getTransaction().commit();
             session.close();
             System.out.println("Person deleted: "+name);

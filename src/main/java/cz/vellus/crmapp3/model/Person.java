@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "person")
-public class Client {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -20,10 +20,10 @@ public class Client {
     @Column
     private String phone;
 
-    public Client() {
+    public Person() {
     }
 
-    public Client(String name, String city, String country, String email, String phone) {
+    public Person(String name, String city, String country, String email, String phone) {
         this.name = name;
         this.city = city;
         this.country = country;
@@ -31,7 +31,7 @@ public class Client {
         this.phone = phone;
     }
 
-    public Client(String name) {
+    public Person(String name) {
         this.setName(name);
     }
 

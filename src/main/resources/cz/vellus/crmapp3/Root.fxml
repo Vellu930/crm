@@ -50,7 +50,7 @@
                 <Insets bottom="20.0" top="20.0" />
             </VBox.margin>
         </Button>
-        <Button fx:id="newClientBut" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToClientForm" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #ff7e67;" text="New client +" textAlignment="CENTER" textFill="#f0f0f0">
+        <Button fx:id="newClientBut" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToClientForm" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #ff7e67;" text="Edit Client" textAlignment="CENTER" textFill="#f0f0f0">
             <font>
                 <Font name="DejaVu Serif Bold" size="15.0" />
             </font>

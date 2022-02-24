@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="hbox" fillHeight="false" opacity="0.77" prefHeight="57.0" prefWidth="671.0" spacing="5.0" style="-fx-background-color: #feffdf; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vellus.crmapp3.controller.MessageItemController">
+   <stylesheets>
+      <URL value="@Style/coolStyles.css" />
+   </stylesheets>
+   <children>
+      <VBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="308.0" HBox.hgrow="ALWAYS">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="senderName" contentDisplay="CENTER" prefHeight="19.0" prefWidth="248.0" text="Carl Vogennahcht" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="timeDateSent" prefHeight="16.0" prefWidth="240.0" text="Date:" VBox.vgrow="ALWAYS" />
+            <Label fx:id="mailSubject" prefHeight="16.0" prefWidth="258.0" text="Subject" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="493.0" HBox.hgrow="ALWAYS">
+         <padding>
+            <Insets left="5.0" right="3.0" />
+         </padding>
+         <children>
+            <Label fx:id="mailContent" alignment="TOP_LEFT" prefHeight="51.0" prefWidth="423.0" text="message content" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</HBox>

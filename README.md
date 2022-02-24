@@ -6,10 +6,18 @@ Client management system
 * [Technologies](#technologies)
 * [Screenshots](#Screenshot)
 
-### General info
-This project is made for smooth hadling of client database. 
-It includes complete table of clients with filtering option, stylish dashboard with up-to-date about tasks, 
-list of most active clients, and current events.
+### General Info
+
+This project when finished will have login/registration window and data connected with specific user session.
+User can then see dashboard with clients list, calendar of events and task list. 
+
+Messages section can fetch emails from gmail account (after enabling access) and 
+display only those that match the email contacts from client database. 
+
+Client table displayed complete client data and allows data operations like deleting, 
+editing and filtering clients through binded search box.
+
+Adding new client section is simple form, which will contain data validation and save option.
 	
 ### Technologies
 Project is created with:
@@ -22,4 +30,6 @@ Project is created with:
 
 ### Screenshots
 
-![alt text](https://github.com/ "Logo Title Text 1")
+![dashboard](https://github.com/src/main/resources/shotcrm1.png)
+
+![table](https://github.com/src/main/resources/shotcrm2.png)
