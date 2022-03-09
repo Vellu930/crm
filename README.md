@@ -30,6 +30,6 @@ Project is created with:
 
 ### Screenshots
 
-![dashboard](https://github.com/src/main/resources/shotcrm1.png)
+![dashboard](https://github.com/Vellu930/crm/blob/main/src/main/resources/shotcrm1.png)
 
-![table](https://github.com/src/main/resources/shotcrm2.png)
+![table](https://github.com/Vellu930/crm/blob/main/src/main/resources/shotcrm2.png)
