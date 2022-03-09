@@ -3,9 +3,11 @@
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/Task.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/data/PersonData.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/module-info.java
+/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/service/GoogleMailer.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/service/Mailer.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/Person.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/ItemController.java
+/home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/service/GmailAPI.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/model/Event.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/MessagesController.java
 /home/vellu/IdeaProjects/CRMapp3/src/main/java/cz/vellus/crmapp3/controller/ClientFormController.java

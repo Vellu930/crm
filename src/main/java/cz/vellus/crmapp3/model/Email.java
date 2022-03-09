@@ -1,73 +1,76 @@
 package cz.vellus.crmapp3.model;
 
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMultipart;
+import java.util.Date;
 
 public class Email {
-    private long number;
-    private String [] senders;
-    private String [] receivers;
+    private int number;
+    private String senderName;
+    private String senderEmail;
     private String subject;
-    private MimeMultipart mimeMultipart;
-    private MimeBodyPart mimeBodyPart;
-    private String contentText;
+    private String contentBody;
+    private String dateSent;
+
 
     public Email() {
     }
 
-// ---------------- GETTERS ----------------------- //
-    public long getNumber() {
+    public Email(String senderName, String subject, String contentBody, String date) {
+        this.senderName = senderName;
+        this.subject = subject;
+        this.contentBody = contentBody;
+        this.dateSent = date;
+    }
+    // ---------------- GETTERS ----------------------- //
+
+    public int getNumber() {
         return number;
     }
 
-    public String[] getSenders() { return senders; }
+    public String getSenderName() {
+        return senderName;
+    }
 
-    public String[] getReceivers() {
-        return receivers;
+    public String getSenderEmail() {
+        return senderEmail;
     }
 
     public String getSubject() {
         return subject;
     }
 
-    public MimeMultipart getMimeMultipart() {
-        return mimeMultipart;
+    public String getContentBody() {
+        return contentBody;
     }
 
-    public MimeBodyPart getMimeBodyPart() {
-        return mimeBodyPart;
+    public String getDateSent() {
+        return dateSent;
     }
 
-    public String getContentText() {
-        return contentText;
-    }
 
-// ---------------- SETTERS ----------------------- //
-    public void setNumber(long number) {
+    // ---------------- SETTERS ----------------------- //
+
+
+    public void setNumber(int number) {
         this.number = number;
     }
 
-    public void setSenders(String[] senders) {
-        this.senders = senders;
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
     }
 
-    public void setReceivers(String[] receivers) {
-        this.receivers = receivers;
+    public void setSenderEmail(String senderEmail) {
+        this.senderEmail = senderEmail;
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public void setMimeMultipart(MimeMultipart mimeMultipart) {
-        this.mimeMultipart = mimeMultipart;
+    public void setContentBody(String contentBody) {
+        this.contentBody = contentBody;
     }
 
-    public void setMimeBodyPart(MimeBodyPart mimeBodyPart) {
-        this.mimeBodyPart = mimeBodyPart;
-    }
-
-    public void setContentText(String contentText) {
-        this.contentText = contentText;
+    public void setDateSent(String dateSent) {
+        this.dateSent = dateSent;
     }
 }

@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="hbox" fillHeight="false" opacity="0.77" prefHeight="57.0" prefWidth="671.0" spacing="5.0" style="-fx-background-color: #feffdf; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vellus.crmapp3.controller.MessageItemController">
+<HBox fx:id="hbox" fillHeight="false" opacity="0.77" prefHeight="57.0" prefWidth="671.0" spacing="5.0" style="-fx-background-color: #feffdf; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cz.vellus.crmapp3.controller.MessageItemController">
    <stylesheets>
       <URL value="@Style/coolStyles.css" />
    </stylesheets>
