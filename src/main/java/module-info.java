@@ -16,6 +16,7 @@ module cz.vellus.crmapp3 {
     requires google.api.services.gmail.v1.rev110;
     requires com.google.gson;
     requires org.apache.commons.codec;
+    requires lombok;
 
     opens cz.vellus.crmapp3 to javafx.fxml;
     exports cz.vellus.crmapp3.controller;

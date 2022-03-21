@@ -10,13 +10,15 @@ import cz.vellus.crmapp3.model.Email;
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GoogleMailer {
-    private static final String USER = "me";
+    private final String USER = "me";
 
-    public static List<Email> fetchEmails(List<String> clientMessages) {
+    public List<Email> fetchEmails(List<String> clientMessages) {
         System.out.println("Fetching matched emails with Gmail...");
         List<Email> emails = new ArrayList<>();
         Gmail service = GmailAPI.getGmailService();
@@ -52,7 +54,12 @@ public class GoogleMailer {
                         System.out.println("From: "+senderName.substring(0, senderName.indexOf("<")).trim());
                     }
                 }
-                emails.add(new Email(senderName, subject, body, date));
+                Email email = new Email();
+                email.setSenderName(senderName);
+                email.setSubject(subject);
+                email.setContentBody(body);
+                email.setDateSent(LocalDate.parse(date, DateTimeFormatter.BASIC_ISO_DATE));
+                emails.add(email);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,7 +67,7 @@ public class GoogleMailer {
         return emails;
     }
 
-    private static String getMessageBody(Message message) {
+    private String getMessageBody(Message message) {
         // TODO: create recursive solution for nested mimeparts
         String decodedBody = null;
         String mimeType = message.getPayload().getMimeType();

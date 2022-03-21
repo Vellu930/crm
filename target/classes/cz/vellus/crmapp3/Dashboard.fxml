@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="514.0" prefWidth="611.0" style="-fx-background-color: #347474; -fx-background-radius: 5;" type="VBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" VBox.vgrow="ALWAYS">
+   <stylesheets>
+      <URL value="@Style/coolStyles.css" />
+   </stylesheets>
+   <children>
+      <HBox fillHeight="false" prefHeight="93.0" prefWidth="618.0" style="-fx-background-color: #42b883; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+         <VBox prefHeight="93.0" prefWidth="460.0">
+            <padding>
+               <Insets left="10.0" top="10.0" />
+            </padding>
+            <Label prefHeight="35.0" prefWidth="391.0" text="Good morning, Photographer!">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label prefHeight="21.0" prefWidth="381.0" text="You have 5 new messages">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="21.0" prefWidth="340.0" text="Clients total: ">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="14.0" />
+               </font>
+            </Label>
+         </VBox>
+      </HBox>
+      <HBox prefHeight="524.0" prefWidth="795.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <VBox fx:id="clientListHolder" prefHeight="412.0" prefWidth="522.0" style="-fx-background-color: #42b883; -fx-background-radius: 5;" HBox.hgrow="ALWAYS">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding>
+            <ListView fx:id="listViewItems" prefHeight="423.0" prefWidth="459.0" style="-fx-background-color: #42b883;" VBox.vgrow="ALWAYS" />
+         </VBox>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</fx:root>

@@ -15,23 +15,23 @@ public class SceneSwitcher {
     private static ClientTableController clientTable;
 
     public static void getDashboard(VBox box) {
-        dashboard = new DashboardController();
+        dashboard = dashboard == null ? new DashboardController(): dashboard;
         VBox vbox = dashboard.getRootNode();
         config(box, vbox);
     }
 
     public static void getClientForm(VBox box) {
-        clientForm = new ClientFormController();
+        clientForm = clientForm == null ? new ClientFormController(): clientForm;
         VBox vbox = clientForm.getRootNode();
         config(box, vbox);
     }
     public static void getMessages(VBox box) {
-        messages = new MessagesController();
+        messages = messages == null ? new MessagesController(): messages;
         VBox vbox = messages.getRootNode();
         config(box, vbox);
     }
     public static void getClientTable(VBox box) {
-        clientTable = new ClientTableController();
+        clientTable = clientTable == null ? new ClientTableController(): clientTable;
         VBox vbox = clientTable.getRootNode();
         config(box, vbox);
     }

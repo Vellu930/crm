@@ -20,7 +20,8 @@ class GoogleMailerTest {
         List<String> emails = mc.emailsFromDB();
         List<String> manualMail = new ArrayList<>();
         manualMail.add("noreply@github.com");
-        List<Email> ems = GoogleMailer.fetchEmails(emails);
+        GoogleMailer gmailer = new GoogleMailer();
+        List<Email> ems = gmailer.fetchEmails(emails);
         mc.loadEmails();
         Assertions.assertTrue(ems.size()>0);
 

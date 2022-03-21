@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="611.0" type="VBox" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@Style/coolStyles.css" />
+   </stylesheets>
+   <children>
+      <VBox prefHeight="514.0" prefWidth="611.0" style="-fx-background-color: #347474; -fx-background-radius: 5;">
+         <children>
+            <VBox fx:id="messagesHolder" prefHeight="243.0" prefWidth="601.0" style="-fx-background-color: #42b883; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <ListView fx:id="listViewMessages" prefHeight="348.0" prefWidth="613.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <HBox fx:id="answeringHolder" prefHeight="49.0" prefWidth="601.0" style="-fx-background-color: #42b883; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</fx:root>
